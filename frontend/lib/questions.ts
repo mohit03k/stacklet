@@ -1,0 +1,67 @@
+export const DefaultQuestions = [
+  {
+    id: 1,
+    title: "How to fix useEffect running twice in React 19?",
+    description:
+      "I'm building a React application and noticed that my useEffect hook runs twice when the component mounts. I've tried using an empty dependency array but the issue still persists...",
+    votes: 12,
+    answers: 3,
+    views: 245,
+    tags: ["reactjs", "javascript", "use-effect"],
+    user: "dev_michael",
+    reputation: 1240,
+    asked: "5 mins ago",
+  },
+  {
+    id: 2,
+    title: "How to handle multiple async tasks concurrently in Rust?",
+    description:
+      "I'm working on a Rust backend using Tokio and need to run multiple async operations concurrently. Should I use tokio::spawn, join!, or FuturesUnordered for better performance?",
+    votes: 8,
+    answers: 2,
+    views: 189,
+    tags: ["rust", "async-await", "tokio"],
+    user: "rustacean42",
+    reputation: 892,
+    asked: "12 mins ago",
+  },
+  {
+    id: 3,
+    title: "TypeScript error: Type 'string' is not assignable to type 'number'",
+    description:
+      "I'm getting a TypeScript compilation error while passing data from an API response into my function. What is the correct way to handle type conversion without using any?",
+    votes: -2,
+    answers: 0,
+    views: 67,
+    tags: ["typescript", "javascript", "types"],
+    user: "codelearner",
+    reputation: 45,
+    asked: "25 mins ago",
+  },
+  {
+    id: 4,
+    title: "How to implement authentication middleware in Express.js?",
+    description:
+      "I'm building a REST API using Node.js and Express. I want to protect certain routes using JWT authentication. How should I structure middleware to verify access tokens?",
+    votes: 5,
+    answers: 1,
+    views: 132,
+    tags: ["node.js", "express", "jwt", "authentication"],
+    user: "backend_dev",
+    reputation: 560,
+    asked: "38 mins ago",
+  },
+  {
+    id: 5,
+    title: "Redis Streams vs Pub/Sub for a real-time messaging system",
+    description:
+      "I'm designing a real-time application where messages need to be delivered reliably. What are the main differences between Redis Streams and Pub/Sub, especially regarding persistence and consumers?",
+    votes: 16,
+    answers: 4,
+    views: 421,
+    tags: ["redis", "distributed-system", "pubsub"],
+    user: "systembuilder",
+    reputation: 2150,
+    asked: "1 hour ago",
+  },
+];
