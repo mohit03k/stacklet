@@ -111,7 +111,9 @@ export const votequestion = async (req: Request, res: Response) => {
         ques.downvote = ques.downvote.filter((id) => id !== String(userid))
       }
     }
-    const questionvote = await question.findByIdAndUpdate(_id, ques, { new: true });
+    const questionvote = await question.findByIdAndUpdate(_id, {
+      $set: { upvote: ques.upvote, downvote: ques.downvote },
+    }, { new: true });
     res.status(200).json({ data: questionvote });
   } catch (error) {
     res.status(500).json("something went wrong while voting");

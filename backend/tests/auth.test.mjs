@@ -141,9 +141,9 @@ test('answer deletion cannot spoof ownership through body fields', async (t) => 
 test('voting uses the identity set by middleware', async (t) => {
   t.mock.method(Question, 'findById', async () => ({ upvote: [], downvote: [] }));
   t.mock.method(Question, 'findByIdAndUpdate', async (id, update) => {
-    assert.deepEqual(update.downvote, [owner]);
-    assert.deepEqual(update.upvote, []);
-    return { _id: id, ...update };
+    assert.deepEqual(update.$set.downvote, [owner]);
+    assert.deepEqual(update.$set.upvote, []);
+    return { _id: id, ...update.$set };
   });
   assert.equal((await protectedRequest(votequestion, { body: { value: 'downvote', userid: other } })).statusCode, 200);
 });

@@ -34,9 +34,11 @@ export const AuthProvider = ({ children }: {
       localStorage.setItem("token", res.data.token);
       toast.success("Signup Successful");
     } catch (e) {
-      const msg = "Signup failed";
+      const msg = "Login failed";
       setError(msg);
       toast.error(msg);
+    } finally {
+      setLoading(false); // runs after success or failure
     }
 
   }
@@ -51,9 +53,10 @@ export const AuthProvider = ({ children }: {
       localStorage.setItem("token", res.data.token);
       toast.success("Login Successful");
     } catch (e) {
-      const msg = "Login failed";
-      setError(msg);
-      toast.error(msg);
+      toast.error("Login failed");
+      throw error; // lets the page's catch handle the failure
+    } finally {
+      setLoading(false); // runs after success or failure
     }
   };
   const Logout = async () => {
