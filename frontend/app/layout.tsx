@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppLayout from "@/components/layout/app-layout";
@@ -29,7 +30,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">
         <AuthProvider>
-          <AppLayout>{children}</AppLayout>
+          <Suspense fallback={<div className="p-6 text-center text-gray-500">Loading...</div>}>
+            <AppLayout>{children}</AppLayout>
+          </Suspense>
           <ToastContainer position="top-right" autoClose={3000} />
         </AuthProvider>
       </body>
